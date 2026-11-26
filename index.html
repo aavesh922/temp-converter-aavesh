@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple temperature converter for Celsius, Fahrenheit and Kelvin." />
+  <title>Temperature Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <nav class="topbar" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="Tempwise home">
+        <span class="brand-icon">°</span><span>tempwise</span>
+      </a>
+      <span class="topbar-note"><span class="status-dot"></span> Instant conversion</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> THE EVERYDAY TEMPERATURE TOOL</div>
+      <h1>Make sense of<br><span>every degree.</span></h1>
+      <p class="hero-copy">Convert temperatures in a flash. Simple, accurate, and ready whenever you need it.</p>
+    </section>
+
+    <section class="converter-card" aria-labelledby="converter-title">
+      <div class="card-heading">
+        <div>
+          <p class="section-kicker">CONVERTER</p>
+          <h2 id="converter-title">Temperature</h2>
+        </div>
+        <div class="live-pill"><span class="status-dot"></span> LIVE</div>
+      </div>
+
+      <form id="converter-form" novalidate>
+        <label class="field-label" for="temperature-input">Enter temperature</label>
+        <div class="input-row">
+          <input id="temperature-input" name="temperature" type="number" step="any" inputmode="decimal" placeholder="e.g. 25" autocomplete="off" />
+          <div class="select-wrap">
+            <select id="from-unit" aria-label="Input temperature unit">
+              <option value="C">°C</option>
+              <option value="F">°F</option>
+              <option value="K">K</option>
+            </select>
+            <span class="select-chevron">⌄</span>
+          </div>
+        </div>
+        <p id="error-message" class="error-message" role="alert" aria-live="polite"></p>
+
+        <div class="convert-meta">
+          <span>CONVERT TO</span>
+          <span class="meta-line"></span>
+        </div>
+        <div class="unit-options" role="group" aria-label="Choose output unit">
+          <button class="unit-button active" type="button" data-unit="C" aria-pressed="true">°C <span>Celsius</span></button>
+          <button class="unit-button" type="button" data-unit="F" aria-pressed="false">°F <span>Fahrenheit</span></button>
+          <button class="unit-button" type="button" data-unit="K" aria-pressed="false">K <span>Kelvin</span></button>
+        </div>
+        <button class="convert-button" type="submit">Convert temperature <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <section class="result-panel" aria-live="polite" aria-label="Conversion result">
+        <div class="result-topline"><span>YOUR RESULT</span><span class="result-symbol">✳</span></div>
+        <div class="result-value" id="result-value">— <small>°C</small></div>
+        <p class="result-description" id="result-description">Your converted temperature will appear here.</p>
+      </section>
+      <div class="card-footer"><span>✓</span> Accurate formulas · Celsius, Fahrenheit & Kelvin</div>
+    </section>
+
+    <section class="quick-reference">
+      <div class="reference-heading">
+        <div><p class="section-kicker">QUICK REFERENCE</p><h2>Useful temperature points</h2></div>
+        <span class="reference-icon">↗</span>
+      </div>
+      <div class="reference-grid">
+        <article class="reference-item"><span class="reference-temp">0°C</span><strong>Freezing point</strong><small>Water turns to ice</small></article>
+        <article class="reference-item"><span class="reference-temp">20°C</span><strong>Room temperature</strong><small>A comfortable indoor day</small></article>
+        <article class="reference-item"><span class="reference-temp">100°C</span><strong>Boiling point</strong><small>Water boils at sea level</small></article>
+      </div>
+    </section>
+    <footer>Made for curious minds <span>·</span> tempwise</footer>
+  </main>
+</body>
+</html>
